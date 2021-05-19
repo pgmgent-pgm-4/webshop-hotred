@@ -1,6 +1,9 @@
 @import "./abstracts/fonts",
         "./abstracts/mixins",
         "./abstracts/variables";
+@import "./base/reset",
+        "./base/typography",
+        "./base/wrapper";
 @import "./components/logo";
 @import "./layout/footer",
         "./layout/grid",

@@ -1,0 +1,79 @@
+header {
+    a {
+        font-size: 1rem;
+    }
+    .small-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 1rem;
+
+        &__content {
+            display: none;
+        }
+    }
+
+    .big-navigation {
+        display: none;
+    }
+
+}
+
+@media (min-width: 40rem) {
+    header {
+
+        .small-navigation {
+
+            &__content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    text-decoration: none;
+                    margin: 0 3rem;
+                }
+
+                &-icons-wrap {
+
+                    a {
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+
+            .hamburger-menu {
+                display: none;
+            }
+        }
+
+        .big-navigation {
+            background: $primary-black;
+            display: block;
+
+            &__content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 1rem;
+            }
+
+
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            input[type='text'] {
+                width: 250px;
+                padding: 0.5rem;
+                background: url(../../assets/img/icons/search-icon.svg) no-repeat center right 0.5rem white;
+                border: none;
+                // background: white;
+                border: 1px solid $primary-black;
+                margin: 1rem 0;
+            }
+        }
+    }
+}

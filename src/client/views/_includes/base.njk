@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryan Judd</title>
-  <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HotRed</title>
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
 
-  {% include "_components/header.njk" %}
+        {% include "_components/header.njk" %}
 
-  <main>
-		{{ content | safe }}
-	</main>
+        <main>
+            <div class="wrapper">
+                {{ content | safe }}
+            </div>
+        </main>
 
-  {% include "_components/footer.njk" %}
+        {% include "_components/footer.njk" %}
 
-</body>
+    </body>
 </html>

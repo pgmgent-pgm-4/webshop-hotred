@@ -1,0 +1,24 @@
+{
+  "name": "webshop-hotred",
+  "version": "1.0.0",
+  "description": "Still in progress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgmgent-pgm-4/webshop-hotred.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgmgent-pgm-4/webshop-hotred/issues"
+  },
+  "homepage": "https://github.com/pgmgent-pgm-4/webshop-hotred#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "prettier": "^2.3.0"
+  }
+}

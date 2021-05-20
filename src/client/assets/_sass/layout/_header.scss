@@ -11,10 +11,57 @@ header {
         &__content {
             display: none;
         }
+
+        .hamburger-menu {
+            cursor: pointer;
+        }
     }
 
     .big-navigation {
         display: none;
+    }
+    .mobile-navigation {
+        display: none;
+    }
+    .mobile-view {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: $primary-red;
+        z-index: 999;
+        // margin: 0 1rem;
+        margin-top: 5rem;
+        padding: 1rem;
+
+        .small-navigation__content-icons-wrap {
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                width: 3rem;
+            }
+        }
+
+        ul {
+
+            li {
+                list-style-type: none;
+                    text-align: center;
+
+
+                a {
+                    text-decoration: none;
+                    display: block;
+                    background: white;
+                    padding: 1rem 0;
+                    margin: 0.5rem 0;
+                    border-radius: 3px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
     }
 
 }
@@ -74,6 +121,10 @@ header {
                 border: 1px solid $primary-black;
                 margin: 1rem 0;
             }
+        }
+
+        .mobile-navigation {
+            display: none;
         }
     }
 }

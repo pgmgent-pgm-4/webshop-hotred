@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'client/assets/css/main.css': 'assets/css/main.css',
     'client/assets/images': 'assets/img',
+    'client/assets/js': 'assets/js'
   });
 
   return {

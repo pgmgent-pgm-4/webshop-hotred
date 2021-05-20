@@ -72,6 +72,14 @@
 
 }
 
+.frontpage__spotlight {
+
+    h2 {
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+}
+
 @media (min-width: 40rem) {
 
 
@@ -89,21 +97,34 @@
 }
 
 @media (min-width: 70rem) {
-    .articles{
+    .articles {
+        h1 {
+            text-align: left;
+            margin-left: 1rem;
+        }
+
         &__all-articles {
             justify-content: space-between;
         }
-        
+
         &__article {
             width: 25%;
 
-             &__link-atc-wrap {
-                 
+            &__link-atc-wrap {
 
-                 img {
+
+                img {
                     width: 4rem;
                 }
-             }
+            }
+        }
+    }
+
+    .frontpage__spotlight {
+
+        h2 {
+            text-align: left;
+            margin-left: 1rem;
         }
     }
 }

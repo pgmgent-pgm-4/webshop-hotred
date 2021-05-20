@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="19" viewBox="0 0 120 19">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="120" height="19" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_1" data-name="Repeat Grid 1" clip-path="url(#clip-path)">
+    <g transform="translate(-150 -894)">
+      <path id="Polygon_1" data-name="Polygon 1" d="M10,0l2.8,6.653,7.2.6-5.47,4.716L16.18,19,10,15.261,3.82,19l1.65-7.027L0,7.257l7.2-.6Z" transform="translate(150 894)" fill="#fff700"/>
+    </g>
+    <g transform="translate(-125 -894)">
+      <path id="Polygon_1-2" data-name="Polygon 1" d="M10,0l2.8,6.653,7.2.6-5.47,4.716L16.18,19,10,15.261,3.82,19l1.65-7.027L0,7.257l7.2-.6Z" transform="translate(150 894)" fill="#fff700"/>
+    </g>
+    <g transform="translate(-100 -894)">
+      <path id="Polygon_1-3" data-name="Polygon 1" d="M10,0l2.8,6.653,7.2.6-5.47,4.716L16.18,19,10,15.261,3.82,19l1.65-7.027L0,7.257l7.2-.6Z" transform="translate(150 894)" fill="#fff700"/>
+    </g>
+    <g transform="translate(-75 -894)">
+      <path id="Polygon_1-4" data-name="Polygon 1" d="M10,0l2.8,6.653,7.2.6-5.47,4.716L16.18,19,10,15.261,3.82,19l1.65-7.027L0,7.257l7.2-.6Z" transform="translate(150 894)" fill="#fff700"/>
+    </g>
+    <g transform="translate(-50 -894)">
+      <path id="Polygon_1-5" data-name="Polygon 1" d="M10,0l2.8,6.653,7.2.6-5.47,4.716L16.18,19,10,15.261,3.82,19l1.65-7.027L0,7.257l7.2-.6Z" transform="translate(150 894)" fill="#fff700"/>
+    </g>
+  </g>
+</svg>

@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Still in progress",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eleventy": "npx eleventy",
     "sass": "sass --style=compressed client/assets/_sass/main.scss client/assets/css/main.css",
     "watch:sass": "npm run sass -- --watch",
-    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "watch:eleventy": "npx @11ty/eleventy --config=.eleventy.cjs --serve",
     "start": "npm-run-all sass --parallel watch:*",
     "build": "npm run sass"
   },

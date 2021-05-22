@@ -1,5 +1,6 @@
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mobileNavigation = document.querySelector('.mobile-navigation');
+const comparisonsList = document.querySelector('.compare__comparisons__list');
 
 //  hamburger menu toggle
 hamburgerMenu.addEventListener('click', () => {
@@ -9,6 +10,5 @@ hamburgerMenu.addEventListener('click', () => {
     mobileNavigation.classList.add("mobile-view");
   }
 })
-
 
 

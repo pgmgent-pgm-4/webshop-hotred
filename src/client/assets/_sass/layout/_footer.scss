@@ -14,7 +14,7 @@ footer {
     }
 
     .footer__navigation-sections {
-        // margin-top: 0.8rem;
+        padding-top: 2rem;
     }
 
     .footer__header-img-wrap {
@@ -90,7 +90,7 @@ footer {
         .footer__desktop-version__content {
             margin: 2rem 1rem;
             margin-bottom: 0;
-            
+
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -103,6 +103,7 @@ footer {
 
             li {
                 list-style-type: none;
+
                 a {
                     color: #fff;
                     text-decoration: none;

@@ -1,0 +1,26 @@
+.checkout {
+
+    form {
+
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin: 0.5rem 1rem;
+
+            display: flex;
+            flex-direction: column;
+
+            .checkout__label-name {
+                color: $primary-black;
+                margin-bottom: 0.5rem;
+                text-transform: capitalize;
+                font-weight: bold;
+            }
+
+            input[type='text'] {
+                padding: 0.5rem;
+            }
+        }
+    }
+}

@@ -5,13 +5,98 @@ title: promotions
 
 <div class="checkout">
     <form action="">
-        <label for="firstname">
-        <span class='checkout__label-name'>first name</span>
-        <input type="text" name="firstname" id="firstname">
+        <div class='checkout__form-split'>
+            <label for="firstname">
+                <span class='checkout__label-name'>first name</span>
+                <input type="text" name="firstname" id="firstname">
+            </label>
+
+            <label for="lastname">
+                <span class='checkout__label-name'>last name</span>
+                <input type="text" name="lastname" id="lastname">
+            </label>
+        </div>
+
+        <label for="email">
+            <span class='checkout__label-name'>email</span>
+            <input type="text" name="email" id="email">
         </label>
-        <label for="lastname">
-        <span class='checkout__label-name'>last name</span>
-        <input type="text" name="lastname" id="lastname">
+
+        <label for="phone">
+            <span class='checkout__label-name'>phone</span>
+            <input type="text" name="phone" id="phone">
         </label>
+
+        <div class='checkout__form-split'>
+            <label for="country">
+                <span class='checkout__label-name'>country</span>
+                <input type="text" name="country" id="country">
+            </label>
+
+            <label for="city">
+                <span class='checkout__label-name'>city</span>
+                <input type="text" name="city" id="city">
+            </label>
+        </div>
+
+        <div class='checkout__form-split'>
+            <label for="street" class='checkout-street'>
+                <span class='checkout__label-name'>street</span>
+                <input type="text" name="street" id="street">
+            </label>
+
+            <label for="houseNr">
+                <span class='checkout__label-name'>house Nr.</span>
+                <input type="text" name="houseNr" id="houseNr">
+            </label>
+        </div>
+
+        <div class="checkout__payment-options-wrap">
+
+            <label for="mastercard" class='checkout__reverse-label'>
+                <input type="radio" id="mastercard" name="age" value="mastercard">
+            Mastercard
+            </label>
+
+            <label for="paypall" class='checkout__reverse-label'>
+                <input type="radio" id="paypall" name="age" value="paypall">
+            PayPal
+            </label>
+
+            <label for="visa" class='checkout__reverse-label'>
+                <input type="radio" id="visa" name="age" value="visa">
+            Visa
+            </label>
+
+            <label for="ideal" class='checkout__reverse-label'>
+                <input type="radio" id="ideal" name="age" value="ideal">
+            Ideal
+            </label>
+        </div>
+
+        <div class='checkout__form-split'>
+            <label for="cardholderName">
+                <span class='checkout__label-name'>cardholder name</span>
+                <input type="text" name="cardholderName" id="cardholderName">
+            </label>
+
+            <label for="cardNr">
+                <span class='checkout__label-name'>card Nr.</span>
+                <input type="text" name="cardNr" id="cardNr">
+            </label>
+        </div>
+
+        <div class='checkout__form-split'>
+            <label for="validThru">
+                <span class='checkout__label-name'>valid thru</span>
+                <input type="text" name="validThru" id="validThru">
+            </label>
+
+            <label for="cvc">
+                <span class='checkout__label-name'>cvc</span>
+                <input type="text" name="cvc" id="cvc">
+            </label>
+        </div>
+        <input type="submit" value="pay">
     </form>
 </div>

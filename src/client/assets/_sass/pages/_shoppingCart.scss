@@ -95,7 +95,12 @@
         
 
         &__prices {
-            width: 40%;
+            width: 20rem;
+            align-self: flex-end;
+        }
+
+        &__ptc-btn {
+            width: 20rem;
             align-self: flex-end;
         }
     }
@@ -122,6 +127,10 @@
 
                     &__select-delete-btn-wrap {
                         width: 30%;
+
+                        img {
+                            width: 2rem;
+                        }
                     }
                 }
             }
@@ -140,7 +149,7 @@
         }
 
         &__prices {
-            width: 20%;
+            // width: 20%;
         }
     }
 

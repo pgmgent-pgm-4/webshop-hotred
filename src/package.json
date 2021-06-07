@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Still in progress",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eleventy": "npx eleventy",
@@ -12,7 +11,17 @@
     "watch:eleventy": "npx @11ty/eleventy --config=.eleventy.cjs --serve",
     "start": "npm-run-all sass --parallel watch:*",
     "build": "npm run sass",
-    "dev": "nodemon server/index.js"
+    "dev": "nodemon server/index.js",
+
+    "build:all": "npm run clean:build && npm run build:server && npm run copy:all",
+    "build:server": "cross-env NODE_ENV=production babel src -d build",
+    "clean:build": "rimraf build/",
+    "copy:all": "npm run copy:data && npm run copy:views",
+    "copy:data": "copyfiles -u 2 src/data/* build/data",
+    "copy:views": "copyfiles -u 2 src/views/* build/views",
+    "lint": "cross-env NODE_ENV=lint eslint . --ext .js --fix",
+    "serve:build": "cross-env NODE_ENV=production HOSTNAME=localhost PORT=8081 node build/app.js",
+    "serve:dev": "cross-env NODE_ENV=development HOSTNAME=localhost PORT=8080 nodemon --exec babel-node -e js,html,nj server/app.js --watch src/*"
   },
   "repository": {
     "type": "git",
@@ -33,16 +42,32 @@
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
+    "@godaddy/terminus": "^4.8.0",
+    "babel-polyfill": "^6.26.0",
     "better-sqlite3": "^7.4.0",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http": "0.0.1-security",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
+    "nunjucks": "^3.2.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "sass": "^1.32.13",
-    "typeorm": "^0.2.32"
+    "sequelize": "^6.6.2",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }

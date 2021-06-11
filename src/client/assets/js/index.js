@@ -10,5 +10,3 @@ hamburgerMenu.addEventListener('click', () => {
     mobileNavigation.classList.add("mobile-view");
   }
 })
-
-

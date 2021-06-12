@@ -1,12 +1,12 @@
 // all fetch functions
 
 // fetch test
-const $articlesFrontpage = document.querySelector('.articles .articles__all-articles');
-const $spotlightFrontpage = document.querySelector('.frontpage__spotlight .articles__all-articles');
 
 
-const showFrontpageArticles = () => {
-  fetch('http://localhost:8080/api/product')
+const showFrontpageArticles =  () => {
+  const $articlesFrontpage = document.querySelector('.articles .articles__all-articles');
+
+   fetch('http://localhost:8080/api/product')
     .then(response => response.json())
     .then(data => {
       data.forEach(product => {
@@ -24,7 +24,7 @@ const showFrontpageArticles = () => {
             <div class="articles__article__link-atc-wrap">
                 <a href="productDetail/index.html">more info</a>
                 <button class='articles__article__addToCardBtn'>
-                <img src="assets/img/icons/add-to-cart.svg" alt="add to cart icon">
+                  <img data-id='${product.id}' src="assets/img/icons/add-to-cart.svg" alt="add to cart icon">
                 </button>
             </div>
             <div class="articles__article__in-stock-wrap">
@@ -35,12 +35,19 @@ const showFrontpageArticles = () => {
         </div>
         `
       });
+      const addToCart = document.querySelectorAll('.articles__article__addToCardBtn')
+      console.log(btn)
+      addToCart.forEach(btn => {
+        btn.addEventListener('click', (e) => console.log(btn.target.className))
+      });
     });
 }
 
 
-const showFrontpageSpotlight = () => {
-  fetch('http://localhost:8080/api/product')
+const showFrontpageSpotlight =  () => {
+  const $spotlightFrontpage = document.querySelector('.frontpage__spotlight .articles__all-articles');
+
+   fetch('http://localhost:8080/api/product')
     .then(response => response.json())
     .then(data => {
       data.forEach(product => {
@@ -57,7 +64,9 @@ const showFrontpageSpotlight = () => {
             </div>
             <div class="articles__article__link-atc-wrap">
                 <a href="productDetail/index.html">more info</a>
-                <img src="assets/img/icons/add-to-cart.svg" alt="add to cart icon">
+                <button class='articles__article__addToCardBtn'>
+                  <img src="assets/img/icons/add-to-cart.svg" alt="add to cart icon">
+                </button>
             </div>
             <div class="articles__article__in-stock-wrap">
                 <img src="assets/img/icons/check_circle.svg" alt="check">
@@ -68,7 +77,10 @@ const showFrontpageSpotlight = () => {
         `
       });
     });
+
+  
 }
 
 showFrontpageSpotlight();
 showFrontpageArticles();
+

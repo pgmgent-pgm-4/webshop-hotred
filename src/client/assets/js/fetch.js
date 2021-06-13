@@ -3,10 +3,10 @@
 // fetch test
 
 
-const showFrontpageArticles =  () => {
+const showFrontpageArticles = () => {
   const $articlesFrontpage = document.querySelector('.articles .articles__all-articles');
 
-   fetch('http://localhost:8080/api/product')
+  fetch('http://localhost:8080/api/product')
     .then(response => response.json())
     .then(data => {
       data.forEach(product => {
@@ -34,20 +34,24 @@ const showFrontpageArticles =  () => {
           </div>
         </div>
         `
+        // add products to cart
+        const addToCart = document.querySelectorAll('.articles__article__addToCardBtn')
+        for (let i = 0; i < addToCart.length; i++) {
+          addToCart[i].addEventListener('click', () => {
+            cartNumbers(data[i])
+            totalCostOfProductsInCart(data[i]);
+          })
+        }
       });
-      const addToCart = document.querySelectorAll('.articles__article__addToCardBtn')
-      console.log(btn)
-      addToCart.forEach(btn => {
-        btn.addEventListener('click', (e) => console.log(btn.target.className))
-      });
+
     });
 }
 
 
-const showFrontpageSpotlight =  () => {
+const showFrontpageSpotlight = () => {
   const $spotlightFrontpage = document.querySelector('.frontpage__spotlight .articles__all-articles');
 
-   fetch('http://localhost:8080/api/product')
+  fetch('http://localhost:8080/api/product')
     .then(response => response.json())
     .then(data => {
       data.forEach(product => {
@@ -78,9 +82,116 @@ const showFrontpageSpotlight =  () => {
       });
     });
 
-  
+
+}
+
+
+// shows amount of items in cart on load 
+const onLoadCartNumbers = () => {
+  let productNumbers = localStorage.getItem('cartNumbers')
+  if (productNumbers) {
+    document.querySelector('.shopping-cart-icon span').textContent = productNumbers;
+  }
+}
+
+// chost amount of items in cart
+const cartNumbers = (product) => {
+  let productNumbers = localStorage.getItem('cartNumbers')
+  productNumbers = parseInt(productNumbers)
+  if (productNumbers) {
+    localStorage.setItem('cartNumbers', productNumbers + 1)
+    document.querySelector('.shopping-cart-icon span').textContent = productNumbers + 1;
+  } else {
+    localStorage.setItem('cartNumbers', 1)
+    document.querySelector('.shopping-cart-icon span').textContent = 1;
+  }
+  setItems(product)
+}
+
+// sets items in localstorage
+const setItems = (product) => {
+  let cartItems = localStorage.getItem('productsInCart')
+  cartItems = JSON.parse(cartItems)
+
+  if (cartItems != null) {
+    if (cartItems[product.name] === undefined) {
+      cartItems = {
+        ...cartItems,
+        [product.name]: product
+      }
+    }
+    cartItems[product.name].inCart += 1;
+  } else {
+    product.inCart = 1;
+    cartItems = {
+      [product.name]: product
+    }
+  }
+  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+}
+
+// counts the amount of products in cart
+const totalCostOfProductsInCart = (product) => {
+  let cartCost = localStorage.getItem('totalCostOfProductsInCart');
+
+  if (cartCost != null) {
+    cartCost = parseInt(cartCost)
+    localStorage.setItem('totalCostOfProductsInCart', cartCost + product.price)
+  } else {
+    localStorage.setItem('totalCostOfProductsInCart', product.price);
+  }
+}
+
+const showCartContentToPage = () => {
+  let cartCost = localStorage.getItem('totalCostOfProductsInCart');
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems)
+
+  const $shoppingCartItems = document.querySelector('.shopping-cart__articles');
+  document.querySelector('.shopping-cart__title').innerHTML = `Shopping cart (${Object.keys(cartItems).length})`
+  if (cartItems && $shoppingCartItems) {
+    $shoppingCartItems.innerHTML = '';
+    Object.values(cartItems).map(product => {
+      $shoppingCartItems.innerHTML += `
+      <div class="shopping-cart__articles__article">
+            <div class='shopping-cart__articles__article-content'>
+                <img src="/assets/img/placeholder-image.png" alt="ph">
+                <div class="shopping-cart__articles__article-info-wrap">
+                    <h3>${product.name}</h3>
+                    <span class="shopping-cart__articles__article-price">
+                        &euro; ${product.price * product.inCart}
+                    </span>
+                    <div class='shopping-cart__articles__article-info-wrap__select-delete-btn-wrap'>
+                        <span>${product.inCart}</span>
+                        <img src="/assets/img/icons/delete-btn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+      `
+    })
+    const $shoppingCartPrices = document.querySelector('.shopping-cart__prices');
+    $shoppingCartPrices.innerHTML = `
+     <li>
+            <span class="shopping-cart__prices__price-item">items</span>
+            &euro;
+            <span class="hopping-cart__prices__price-amount">${cartCost}</span>
+        </li>
+        <li>
+            <span class="shopping-cart__prices__price-item">tax</span>
+            &euro;
+            <span class="hopping-cart__prices__price-amount">100</span>
+        </li>
+         <li>
+            <span class="shopping-cart__prices__price-item price-total">total</span>
+            &euro;
+            <span class="hopping-cart__prices__price-amount price-total">${parseInt(cartCost) + 100}</span>
+        </li>
+    `
+  }
 }
 
 showFrontpageSpotlight();
 showFrontpageArticles();
-
+onLoadCartNumbers();
+showCartContentToPage();

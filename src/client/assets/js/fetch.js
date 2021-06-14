@@ -45,6 +45,8 @@ const showFrontpageArticles = () => {
             totalCostOfProductsInCart(data[i]);
           })
         }
+
+        // link to detail page
         const productDetailPage = document.querySelector('.product-detail');
         moreInfoOfProduct.forEach((link, i) => {
           link.addEventListener('click', () => {
@@ -76,7 +78,7 @@ const showFrontpageSpotlight = () => {
                 <span class="articles__article__rating-amount">(256)</span>
             </div>
             <div class="articles__article__link-atc-wrap">
-                <a href="productDetail/index.html">more info</a>
+                <a class='articles__article__link' href="productDetail/index.html?product=${product.id}">more info</a>
                 <button class='articles__article__addToCardBtn'>
                   <img src="assets/img/icons/add-to-cart.svg" alt="add to cart icon">
                 </button>
@@ -90,12 +92,23 @@ const showFrontpageSpotlight = () => {
         `
         // add products to cart
         const addToCart = document.querySelectorAll('.articles__article__addToCardBtn')
+        const moreInfoOfProduct = document.querySelectorAll('.articles__article__link');
+
         for (let i = 0; i < addToCart.length; i++) {
           addToCart[i].addEventListener('click', () => {
             cartNumbers(data[i])
             totalCostOfProductsInCart(data[i]);
           })
         }
+
+        // link to detail page
+        const productDetailPage = document.querySelector('.product-detail');
+        moreInfoOfProduct.forEach((link, i) => {
+          link.addEventListener('click', () => {
+            productDetailPage.innerHTML = 'test'
+            console.log(data[i])
+          })
+        });
       });
     });
 

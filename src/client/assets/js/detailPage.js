@@ -1,9 +1,7 @@
 const search = window.location.search;
 const params = new URLSearchParams(search);
-
 const urlType = params.get('product')
 
-console.log(typeof (urlType))
 
 fetch('http://localhost:8080/api/product')
   .then(response => response.json())

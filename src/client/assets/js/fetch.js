@@ -2,6 +2,7 @@
 
 // fetch test
 
+// link: productDetail / index.html
 
 const showFrontpageArticles = () => {
   const $articlesFrontpage = document.querySelector('.articles .articles__all-articles');
@@ -22,7 +23,7 @@ const showFrontpageArticles = () => {
                 <span class="articles__article__rating-amount">(256)</span>
             </div>
             <div class="articles__article__link-atc-wrap">
-                <a href="productDetail/index.html">more info</a>
+                <a class='articles__article__link' href="productDetail/index.html?product=${product.id}">more info</a>
                 <button class='articles__article__addToCardBtn'>
                   <img data-id='${product.id}' src="assets/img/icons/add-to-cart.svg" alt="add to cart icon">
                 </button>
@@ -36,14 +37,22 @@ const showFrontpageArticles = () => {
         `
         // add products to cart
         const addToCart = document.querySelectorAll('.articles__article__addToCardBtn')
+        const moreInfoOfProduct = document.querySelectorAll('.articles__article__link');
+
         for (let i = 0; i < addToCart.length; i++) {
           addToCart[i].addEventListener('click', () => {
             cartNumbers(data[i])
             totalCostOfProductsInCart(data[i]);
           })
         }
+        const productDetailPage = document.querySelector('.product-detail');
+        moreInfoOfProduct.forEach((link, i) => {
+          link.addEventListener('click', () => {
+            productDetailPage.innerHTML = 'test'
+            console.log(data[i])
+          })
+        });
       });
-
     });
 }
 
@@ -79,6 +88,14 @@ const showFrontpageSpotlight = () => {
           </div>
         </div>
         `
+        // add products to cart
+        const addToCart = document.querySelectorAll('.articles__article__addToCardBtn')
+        for (let i = 0; i < addToCart.length; i++) {
+          addToCart[i].addEventListener('click', () => {
+            cartNumbers(data[i])
+            totalCostOfProductsInCart(data[i]);
+          })
+        }
       });
     });
 
@@ -163,12 +180,20 @@ const showCartContentToPage = () => {
                     </span>
                     <div class='shopping-cart__articles__article-info-wrap__select-delete-btn-wrap'>
                         <span>${product.inCart}</span>
+                        <button class='shopping-cart__articles__article__delete-btn'>
                         <img src="/assets/img/icons/delete-btn.svg" alt="">
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
       `
+      const deleteItemFromShoppingCartBtn = document.querySelectorAll('.shopping-cart__articles__article__delete-btn');
+      deleteItemFromShoppingCartBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // delete function here
+        })
+      });
     })
     const $shoppingCartPrices = document.querySelector('.shopping-cart__prices');
     $shoppingCartPrices.innerHTML = `

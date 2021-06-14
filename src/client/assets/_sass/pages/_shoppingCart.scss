@@ -43,20 +43,26 @@
                         align-items: center;
                         justify-content: space-between;
 
-                        img {
-                            width: 3rem;
+                        button {
+                            background: none;
+                            border: none;
+
+                            img {
+                            width: 2rem;
                             cursor: pointer;
                         }
 
-                        select {
-                            background: #fff;
-                            font-size: 1.5rem;
-                            text-align: center;
-                            padding: 0.5rem;
-                            border: 1px solid $primary-black;
-                            border-radius: 3px;
-                            width: 30%;
                         }
+                        
+                        // select {
+                        //     background: #fff;
+                        //     font-size: 1.5rem;
+                        //     text-align: center;
+                        //     padding: 0.5rem;
+                        //     border: 1px solid $primary-black;
+                        //     border-radius: 3px;
+                        //     width: 30%;
+                        // }
                     }
                 }
             }

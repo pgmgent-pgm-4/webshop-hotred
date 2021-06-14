@@ -37,7 +37,7 @@
     }
 }
 
-.articles {
+.articles, .computers {
 
     h1 {
         text-align: center;
@@ -138,7 +138,7 @@
     }
 
 
-    .articles {
+    .articles, .computers {
 
         &__article {
             width: 50%;
@@ -157,7 +157,7 @@
         background-size: cover;
     }
 
-    .articles {
+    .articles, .computers {
         h1 {
             text-align: left;
             margin-left: 1rem;

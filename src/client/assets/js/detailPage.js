@@ -19,7 +19,7 @@ fetch('http://localhost:8080/api/product')
         let tempStr = "";
         tempStr += `
          <div class="product-detail__photo-wrap">
-        <div class='product-detail__photo-wrap__big-image'><img class='product-detail-img-one' src='https://picsum.photos/600/400' alt=""></div>
+        <div class='product-detail__photo-wrap__big-image'><img class='product-detail-img-one' src='https://source.unsplash.com/1600x900/?computer' alt=""></div>
         <div class='product-detail__photo-wrap__small-image'>
             <img class='product-detail-img-two' src="/assets/img/placeholder-image.png" alt="">
             <img class='product-detail-img-three' src="/assets/img/placeholder-image.png" alt="">

@@ -1,7 +1,5 @@
 // all fetch functions
 
-// fetch test
-
 // link: productDetail / index.html
 
 const showFrontpageArticles = () => {
@@ -13,7 +11,7 @@ const showFrontpageArticles = () => {
       data.forEach(product => {
         $articlesFrontpage.innerHTML += `
           <div class="articles__article">
-            <img class='articles__article__product-image' src="https://picsum.photos/200" alt="ph">
+            <img class='articles__article__product-image' src="https://source.unsplash.com/1600x900/?computer" alt="ph">
             <h3>${product.name}</h3>
             <span class="articles__article__price">
                 <strong>€ ${product.price}</strong>
@@ -68,7 +66,8 @@ const showFrontpageSpotlight = () => {
       data.forEach(product => {
         $spotlightFrontpage.innerHTML += `
           <div class="articles__article">
-            <img class='articles__article__product-image' src="https://picsum.photos/200" alt="ph">
+            <img class='articles__article__product-image' src="https://source.unsplash.com/1600x900/?    console.log(data)
+" alt="ph">
             <h3>${product.name}</h3>
             <span class="articles__article__price">
                 <strong>€ ${product.price}</strong>
@@ -229,6 +228,48 @@ const showCartContentToPage = () => {
   }
 }
 
+//---------------------------computer page-------------------------
+
+showComputerPageArticles = () => {
+  console.log(window.location.pathname)
+  const techType = window.location.pathname.replace('/', '');
+  const $computerPage = document.querySelector('.computers .articles__all-articles');
+  fetch('http://localhost:8080/api/product')
+    .then(response => response.json())
+    .then(data => {
+      data.map(product => {
+        product.type = 'computer'
+        if (product.type === 'computer') {
+          $computerPage.innerHTML += `
+          <div class="articles__article">
+            <img class='articles__article__product-image' src="https://source.unsplash.com/1600x900/?${techType}" alt="ph">
+            <h3>${product.name}</h3>
+            <span class="articles__article__price">
+                <strong>€ ${product.price}</strong>
+            </span>
+            <div class="articles__article__rating-wrap">
+                <img src="../assets/img/icons/all-rating-starts.svg" alt="5 star rating">
+                <span class="articles__article__rating-amount">(256)</span>
+            </div>
+            <div class="articles__article__link-atc-wrap">
+                <a class='articles__article__link' href="productDetail/index.html?product=${product.id}">more info</a>
+                <button class='articles__article__addToCardBtn'>
+                  <img data-id='${product.id}' src="../assets/img/icons/add-to-cart.svg" alt="add to cart icon">
+                </button>
+            </div>
+            <div class="articles__article__in-stock-wrap">
+                <img src="../assets/img/icons/check_circle.svg" alt="check">
+                <span class="articles__article__in-stock">in stock</span>
+            </div>
+          </div>
+        </div>
+        `
+        }
+      })
+    })
+}
+
+showComputerPageArticles();
 showFrontpageSpotlight();
 showFrontpageArticles();
 onLoadCartNumbers();

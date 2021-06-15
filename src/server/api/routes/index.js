@@ -18,6 +18,269 @@ import * as user from "../controllers/user.controller";
 
 const app = express.Router();
 
+/**
+ * @swagger
+ * 
+ * /api/product:
+ *  get:
+ *    tags:
+ *    - "product"
+ *    description: Get all products
+ *    responses:
+ *      200:
+ *        description: Success
+ *  post:
+ *    tags:
+ *    - "product"
+ *    description: add a product
+ *    consumes:
+ *      - "application/json"
+ *    parameters:
+ *    - name: body
+ *      in: body
+ *      description: json file for update
+ *      required: true
+ *      type: object
+ *      schema:
+ *        type: object
+ *        properties:
+ *          name:
+ *            type: string
+ *          price:
+ *            type: integer
+ *    responses:
+ *      201:
+ *        description: Created
+ * 
+ * /api/product/{id}:
+ *  get:
+ *    tags:
+ *    - "product"
+ *    description: Get a specific product
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    responses:
+ *      200:
+ *        description: "successful"
+ *  put:
+ *    tags:
+ *    - "product"
+ *    description: Update a product
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    - name: body
+ *      in: body
+ *      description: json file for update
+ *      required: true
+ *      type: object
+ *      schema:
+ *        type: object
+ *        properties:
+ *          name:
+ *            type: string
+ *          price:
+ *            type: integer
+ *    responses:
+ *      200:
+ *        description: Success
+ *  delete:
+ *    tags:
+ *    - "product"
+ *    description: delete a specific product
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    responses:
+ *      200:
+ *        description: Success
+ */
+
+/**
+ * @swagger
+ * 
+ * /api/order:
+ *  get:
+ *    tags:
+ *    - "order"
+ *    description: Get all orders
+ *    responses:
+ *      200:
+ *        description: Success
+ *  post:
+ *    tags:
+ *    - "order"
+ *    description: add an order
+ *    consumes:
+ *      - "application/json"
+ *    parameters:
+ *    - name: body
+ *      in: body
+ *      description: json file for update
+ *      required: true
+ *      type: object
+ *      schema:
+ *        type: object
+ *        properties:
+ *          payment_id:
+ *            type: integer
+ *          order_products_id:
+ *            type: integer
+ *    responses:
+ *      201:
+ *        description: Created
+ * 
+ * /api/order/{id}:
+ *  get:
+ *    tags:
+ *    - "order"
+ *    description: Get a specific order
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    responses:
+ *      200:
+ *        description: "successful"
+ *  put:
+ *    tags:
+ *    - "order"
+ *    description: Update a specific order
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    - name: body
+ *      in: body
+ *      description: json file for update
+ *      required: true
+ *      type: object
+ *      schema:
+ *        type: object
+ *        properties:
+ *          name:
+ *            type: string
+ *          price:
+ *            type: integer
+ *    responses:
+ *      200:
+ *        description: Success
+ *  delete:
+ *    tags:
+ *    - "order"
+ *    description: Delete a specific order
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    responses:
+ *      200:
+ *        description: Success
+ */
+
+/**
+ * @swagger
+ * 
+ * /api/productReview:
+ *  get:
+ *    tags:
+ *    - "productReview"
+ *    description: Get all reviews
+ *    responses:
+ *      200:
+ *        description: Success
+ *  post:
+ *    tags:
+ *    - "productReview"
+ *    description: add an review
+ *    consumes:
+ *      - "application/json"
+ *    parameters:
+ *    - name: body
+ *      in: body
+ *      description: json file for update
+ *      required: true
+ *      type: object
+ *      schema:
+ *        type: object
+ *        properties:
+ *          subject:
+ *            type: string
+ *          review:
+ *            type: string
+ *    responses:
+ *      201:
+ *        description: Created
+ * 
+ * /api/productReview/{id}:
+ *  get:
+ *    tags:
+ *    - "productReview"
+ *    description: Get a specific review
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    responses:
+ *      200:
+ *        description: "successful"
+ *  put:
+ *    tags:
+ *    - "productReview"
+ *    description: Update a specific review
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    - name: body
+ *      in: body
+ *      description: json file for update
+ *      required: true
+ *      schema:
+ *        type: object
+ *        properties:
+ *          subject:
+ *            type: string
+ *          review:
+ *            type: string
+ *    responses:
+ *      200:
+ *        description: Success
+ *  delete:
+ *    tags:
+ *    - "productReview"
+ *    description: Delete a specific review
+ *    parameters:
+ *    - name: id
+ *      in: path
+ *      description: Id for specific item
+ *      required: true
+ *      type: integer
+ *    responses:
+ *      200:
+ *        description: Success
+ */
+
 app.get("/user", user.getUsers);
 app.get("/user/:userId", user.getUserById);
 app.post("/user", user.createUser);

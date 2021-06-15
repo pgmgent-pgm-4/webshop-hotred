@@ -12,11 +12,22 @@ const swaggerDefinition = {
 			description: 'Development server',
 		},
 	],
+	tags: [
+		{
+			name: "product"
+		},
+		{
+			name: "order"
+		},
+		{
+			name: "productReview"
+		}
+	]
 };
 
 const swaggerOptions = {
 	swaggerDefinition,
-	apis: ['./src/api/routes/*.js'],
+	apis: ['./api/routes/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);

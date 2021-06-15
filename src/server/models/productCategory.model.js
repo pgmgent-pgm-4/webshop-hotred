@@ -6,10 +6,12 @@ export default (sequelize) => {
       this.belongsTo(models.products, {
         as: 'products_has_categories',
         foreignKey: 'products_id',
+        constraints: false,
       });
 
       this.belongsTo(models.categories, {
-        foreignKey: 'categories_id'
+        foreignKey: 'categories_id',
+        constraints: false,
       });
     }
   }

@@ -5,11 +5,13 @@ export default (sequelize) => {
     static associate(models) {
       this.hasMany(models.order_products_has_products, { 
         as: 'order_products_has_products',
-        foreignKey: 'order_products_id'
+        foreignKey: 'order_products_id',
+        constraints: false,
       });
 
       this.hasOne(models.orders, {
-        foreignKey: 'order_products_id'
+        foreignKey: 'order_products_id',
+        constraints: false,
       })
     }
   }

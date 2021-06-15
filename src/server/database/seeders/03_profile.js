@@ -31,7 +31,7 @@ export default {
 	up: async (queryInterface, Sequelize) => {
 		await queryInterface.bulkInsert(
 			database.profiles.tableName,
-			getProfiles(50),
+			getProfiles(40),
 			{},
 		);
 	},

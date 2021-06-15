@@ -4,15 +4,18 @@ export default (sequelize) => {
   class payment extends Model {
     static associate(models) {
       this.hasOne(models.orders, {
-        foreignKey: 'payment_id'
+        foreignKey: 'payment_id',
+        constraints: false,
       });
 
       this.belongsTo(models.payment_methods, {
-        foreignKey: 'payment_methods_id'
+        foreignKey: 'payment_methods_id',
+        constraints: false,
       });
 
       this.hasOne(models.users, {
-        foreignKey: 'payment_id'
+        foreignKey: 'payment_id',
+        constraints: false,
       });
     }
   }

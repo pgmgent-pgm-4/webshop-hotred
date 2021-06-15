@@ -1,3 +1,4 @@
+import { datatype } from 'faker';
 import { Model, DataTypes } from 'sequelize';
 
 export default (sequelize) => {
@@ -5,14 +6,17 @@ export default (sequelize) => {
     static associate(models) {
       this.hasOne(models.users, {
         foreignKey: 'profile_id',
+        constraints: false,
       });
 
       this.belongsTo(models.cities, {
-        foreignKey: 'city_id'
+        foreignKey: 'city_id',
+        constraints: false,
       });
 
       this.belongsTo(models.countries, {
-        foreignKey: 'country_id'
+        foreignKey: 'country_id',
+        constraints: false,
       });
     }
   }
@@ -25,7 +29,8 @@ export default (sequelize) => {
       phone: DataTypes.STRING,
       username: DataTypes.STRING,
       password: DataTypes.STRING,
-      houseNr: DataTypes.STRING,
+      street: DataTypes.STRING,
+      house_nr: DataTypes.STRING,
     },
     {
       sequelize,

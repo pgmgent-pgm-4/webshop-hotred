@@ -4,7 +4,7 @@ export default (sequelize) => {
   class Promotion extends Model {
     static associate(models) {
       this.belongsTo(models.products, {
-        foreignKey: "products_id"
+        foreignKey: "products_id", constraints: false,
       })
     }
   }

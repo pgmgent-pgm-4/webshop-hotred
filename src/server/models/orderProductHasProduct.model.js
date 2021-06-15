@@ -5,10 +5,12 @@ export default (sequelize) => {
     static associate(models) {
       this.belongsTo(models.products, {
         foreignKey: 'products_id',
+        constraints: false,
       });
 
       this.belongsTo(models.order_products, {
-        foreignKey: 'order_products_id'
+        foreignKey: 'order_products_id',
+        constraints: false,
       })
     }
   }

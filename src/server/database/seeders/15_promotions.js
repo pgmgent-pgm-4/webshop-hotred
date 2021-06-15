@@ -6,31 +6,28 @@ import { generateValueBetweenMinAndMax } from '../../utils';
 import database from '../index';
 database.connect();
 
-const getPayments = (n = 20) => {
-  const payments = [];
+const getOrderProductHasProducts = (n = 20) => {
+  const orderProductHasProducts = [];
   for (let i = 0; i < n; i++) {
-    payments.push({
-      card_number: faker.finance.creditCardNumber(),
-			card_exp_date: "17 June 2021",
-			payment_date: "16 June 2021",
+    orderProductHasProducts.push({
+			products_id: Math.round(Math.random() * 100 + 1),
       createdAt: new Date(),
       updatedAt: new Date(),
-			payment_methods_id: Math.round(Math.random() * 5 + 1)
     });
   }
-  return payments;
+  return orderProductHasProducts;
 };
 
 export default {
 	up: async (queryInterface, Sequelize) => {
 		await queryInterface.bulkInsert(
-			database.payments.tableName,
-			getPayments(80),
+			database.order_products_has_products.tableName,
+			getOrderProductHasProducts(50),
 			{},
 		);
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete(database.payments.tableName, null, {});
+		await queryInterface.bulkDelete(database.order_products_has_products.tableName, null, {});
 	},
 };

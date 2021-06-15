@@ -4,7 +4,8 @@ export default (sequelize) => {
   class County extends Model {
     static associate(models) {      
       this.hasMany(models.profiles, {
-        foreignKey: 'country_id'
+        foreignKey: 'country_id',
+        constraints: false,
       })
     }
   }

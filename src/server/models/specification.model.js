@@ -5,7 +5,8 @@ export default (sequelize) => {
     static associate(models) {
       this.hasOne(models.products, {
         as: 'Product',
-        foreignKey: 'specifications_id'
+        foreignKey: 'specifications_id',
+        constraints: false,
       });
     }
   }
@@ -13,7 +14,7 @@ export default (sequelize) => {
   Specification.init(
     {
       height: DataTypes.FLOAT,
-      widht: DataTypes.FLOAT,
+      width: DataTypes.FLOAT,
       weight: DataTypes.FLOAT,
       ram: DataTypes.INTEGER,
       storage: DataTypes.INTEGER

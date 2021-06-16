@@ -1,0 +1,130 @@
+header {
+    a {
+        font-size: 1rem;
+    }
+    .small-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 1rem;
+
+        &__content {
+            display: none;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+        }
+    }
+
+    .big-navigation {
+        display: none;
+    }
+    .mobile-navigation {
+        display: none;
+    }
+    .mobile-view {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: $primary-red;
+        z-index: 999;
+        // margin: 0 1rem;
+        margin-top: 5rem;
+        padding: 1rem;
+
+        .small-navigation__content-icons-wrap {
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                width: 3rem;
+            }
+        }
+
+        ul {
+
+            li {
+                list-style-type: none;
+                    text-align: center;
+
+
+                a {
+                    text-decoration: none;
+                    display: block;
+                    background: white;
+                    padding: 1rem 0;
+                    margin: 0.5rem 0;
+                    border-radius: 3px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+}
+
+@media (min-width: 40rem) {
+    header {
+
+        .small-navigation {
+
+            &__content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    text-decoration: none;
+                    margin: 0 3rem;
+                }
+
+                &-icons-wrap {
+
+                    a {
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+
+            .hamburger-menu {
+                display: none;
+            }
+        }
+
+        .big-navigation {
+            background: $primary-black;
+            display: block;
+
+            &__content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 1rem;
+            }
+
+
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            input[type='text'] {
+                width: 250px;
+                padding: 0.5rem;
+                background: url(../../assets/img/icons/search-icon.svg) no-repeat center right 0.5rem white;
+                border: none;
+                // background: white;
+                border: 1px solid $primary-black;
+                margin: 1rem 0;
+            }
+        }
+
+        .mobile-navigation {
+            display: none;
+        }
+    }
+}

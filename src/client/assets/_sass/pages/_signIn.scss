@@ -1,0 +1,70 @@
+.sign-in {
+
+    h1 {
+        margin: 3rem 1rem;
+        text-align: center;
+    }
+
+    form {
+        margin: 0 1rem;
+
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin: 0.5rem 0;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+
+            display: flex;
+            flex-direction: column;
+
+            .contact__label-name {
+                margin: 0.5rem 0;
+            }
+
+            input[type=text] {
+                padding: 0.5rem;
+            }
+        }
+
+        a {
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        input[type=submit] {
+            background: $primary-green;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 3px;
+            padding: 1rem 0;
+            margin: 1rem 0;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 70rem) {
+    .sign-in {
+
+
+        form {
+            width: 40%;
+            margin: 0 auto;
+
+            a {
+                text-align: right;
+            }
+            input[type=submit] {
+                width: 20%;
+                align-self: flex-end;
+            }
+        }
+    }
+}

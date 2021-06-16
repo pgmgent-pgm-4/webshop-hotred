@@ -1,0 +1,40 @@
+.account {
+    h1 {
+        text-align: center;
+        margin: 3rem 1rem;
+    }
+
+    &__links {
+        margin: 0 1rem;
+
+        display: flex;
+        flex-direction: column;
+
+        &__link {
+            margin: 0.5rem 0;
+            padding:  0.5rem;
+            border: 1px solid $primary-black;
+            text-decoration: none;
+            font-weight: bold;
+            max-width: 25rem;
+
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: 1rem;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 70rem) {
+    .account{
+        
+        h1{
+            text-align: start;
+        }
+    }
+}

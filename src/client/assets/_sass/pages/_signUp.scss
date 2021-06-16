@@ -1,0 +1,82 @@
+ .sign-up {
+     form {
+         width: 100%;
+         max-width: 50rem;
+         margin: 3rem auto;
+
+         display: flex;
+         flex-direction: column;
+
+         label {
+             margin: 0.5rem 1rem;
+
+             display: flex;
+             flex-direction: column;
+
+             .sign-up__label-name {
+                 color: $primary-black;
+                 margin-bottom: 0.5rem;
+                 text-transform: uppercase;
+                 font-size: 1.25rem;
+             }
+
+             input[type='text'] {
+                 padding: 0.5rem;
+             }
+         }
+
+         .sign-up__payment-options-wrap {
+             margin: 2rem 0;
+
+             display: flex;
+             flex-flow: row wrap;
+             justify-content: space-between;
+
+             .sign-up__reverse-label {
+                 color: $primary-black;
+                 font-weight: bold;
+                 display: flex;
+                 flex-direction: row;
+
+                 input {
+                     margin-right: 0.5rem;
+                 }
+             }
+         }
+
+         input[type='submit'] {
+             background: $primary-green;
+             color: #fff;
+             font-size: 1.2rem;
+             font-weight: bold;
+             border: none;
+             border-radius: 3px;
+             padding: 1rem 0;
+             margin: 1rem;
+             cursor: pointer;
+         }
+     }
+ }
+
+ @media (min-width: 40rem) {
+     .sign-up {
+
+         form {
+
+             .sign-up__form-split {
+                 display: flex;
+                 justify-content: space-between;
+
+                 label {
+                     flex: 1;
+                 }
+                
+             }
+
+             input[type=submit] {
+                 width: 10rem;
+                 align-self: flex-end;
+             }
+         }
+     }
+ }

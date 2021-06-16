@@ -8,7 +8,7 @@ const showFrontpageArticles = () => {
   fetch('http://localhost:8080/api/product')
     .then(response => response.json())
     .then(data => {
-      data.forEach(product => {
+      data.slice(0,8).forEach(product => {
         $articlesFrontpage.innerHTML += `
           <div class="articles__article">
             <img class='articles__article__product-image' src="https://source.unsplash.com/1600x900/?computer" alt="ph">
@@ -17,7 +17,7 @@ const showFrontpageArticles = () => {
                 <strong>€ ${product.price}</strong>
             </span>
             <div class="articles__article__rating-wrap">
-                <img src="assets/img/icons/all-rating-starts.svg" alt="5 star rating">
+                <img src="../assets/img/icons/all-rating-stars.svg" alt="5 star rating">
                 <span class="articles__article__rating-amount">(256)</span>
             </div>
             <div class="articles__article__link-atc-wrap">
@@ -63,17 +63,16 @@ const showFrontpageSpotlight = () => {
   fetch('http://localhost:8080/api/product')
     .then(response => response.json())
     .then(data => {
-      data.forEach(product => {
+      data.slice(0,8).forEach(product => {
         $spotlightFrontpage.innerHTML += `
           <div class="articles__article">
-            <img class='articles__article__product-image' src="https://source.unsplash.com/1600x900/?    console.log(data)
-" alt="ph">
+            <img class='articles__article__product-image' src="https://source.unsplash.com/1600x900/?" alt="ph">
             <h3>${product.name}</h3>
             <span class="articles__article__price">
                 <strong>€ ${product.price}</strong>
             </span>
             <div class="articles__article__rating-wrap">
-                <img src="assets/img/icons/all-rating-starts.svg" alt="5 star rating">
+                <img src="assets/img/icons/all-rating-stars.svg" alt="5 star rating">
                 <span class="articles__article__rating-amount">(256)</span>
             </div>
             <div class="articles__article__link-atc-wrap">
@@ -248,7 +247,7 @@ showComputerPageArticles = () => {
                 <strong>€ ${product.price}</strong>
             </span>
             <div class="articles__article__rating-wrap">
-                <img src="../assets/img/icons/all-rating-starts.svg" alt="5 star rating">
+                <img src="../assets/img/icons/all-rating-stars.svg" alt="5 star rating">
                 <span class="articles__article__rating-amount">(256)</span>
             </div>
             <div class="articles__article__link-atc-wrap">
